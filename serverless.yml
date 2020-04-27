@@ -1,0 +1,16 @@
+service: sls-ruby-test
+
+provider:
+  name: aws
+  runtime: ruby2.7
+  stage: dev
+  region: us-east-1
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
+
